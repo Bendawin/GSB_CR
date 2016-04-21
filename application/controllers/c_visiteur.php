@@ -50,6 +50,13 @@ class C_visiteur extends CI_Controller {
 				$idVisiteur = $this->session->userdata('idUser');
 				$this->a_visiteur->mesFiches($idVisiteur);
 			}
+			elseif ($action == 'ajouterCR')
+			{
+				$this->load->model('a_visiteur');
+				$this->a_visiteur->ajouterCR();
+				
+			}
+			
 			elseif ($action == 'deconnecter')	// deconnecter demandé : on active la fonction deconnecter du modèle authentif
 			{
 				$this->load->model('authentif');

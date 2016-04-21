@@ -1,9 +1,13 @@
+<?php
+	$this->load->helper('url');
+?>
 <html><head>
 	<title>formulaire RAPPORT_VISITE</title>
 	<style type="text/css">
-		<!-- body {background-color: white; color:5599EE; } 
-			label.titre { width : 180 ;  clear:left; float:left; } 
-			.zone { width : 30car ; float : left; color:5599EE } -->
+		 body { margin-left: 100px; } 
+		label.titre { width : 180 ;  clear:left; float:left; } 
+		.zone { width : 30car ; float : left; color:5599EE }
+		
 	</style>
 	<script language="javascript">
 		function selectionne(pValeur, pSelection,  pObjet) {
@@ -46,17 +50,8 @@
         }
     </script>
 </head>
-<body>
-<div name="haut" style="margin: 2 2 2 2 ;height:6%;"><h1><img src="logo.jpg" width="100" height="60"/>Gestion des visites</h1></div>
-<div name="gauche" style="float:left;width:18%; background-color:white; height:100%;">
-	<h2>Outils</h2>
-	<ul><li>Comptes-Rendus</li>
-		<ul>
-			<li><a href="formRAPPORT_VISITE.htm" >Nouveaux</a></li>
-			<li>Consulter</li>
-		</ul>
-	</ul>
-</div>
+<body style = " ">
+
 <div name="droite" style="float:left;width:80%;">
 	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD;color:white;height:88%;">
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">

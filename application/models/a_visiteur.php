@@ -49,7 +49,8 @@ class A_visiteur extends CI_Model {
 
 	public function ajouterCR()
 	{	
-		$this->templates->load('t_visiteur', 'v_ajouterCR', $data);
+		
+		$this->templates->load('t_visiteur', 'v_ajouterCR');
 	}
 
 	/**
