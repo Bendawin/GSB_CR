@@ -18,22 +18,8 @@ class A_visiteur extends CI_Model {
 	 * Si l'une d'elle est absente, elle est créée
 	*/
 	public function accueil()
-	{	// TODO : Contrôler que toutes les valeurs de $unMois sont valides (chaine de caractère dans la BdD)
+	{	// TODO : Charge la page d'accueil
 	
-		// chargement du modèle contenant les fonctions génériques
-		$this->load->model('functionsLib');
-
-		// obtention de la liste des 6 derniers mois (y compris celui ci)
-		$lesMois = $this->functionsLib->getSixDerniersMois();
-		
-		// obtention de l'id de l'utilisateur mémorisé en session
-		$idVisiteur = $this->session->userdata('idUser');
-		
-		// contrôle de l'existence des 6 dernières fiches et création si nécessaire
-		foreach ($lesMois as $unMois){
-			if(!$this->dataAccess->ExisteFiche($idVisiteur, $unMois)) $this->dataAccess->creeFiche($idVisiteur, $unMois);
-		}
-		// envoie de la vue accueil du visiteur
 		$this->templates->load('t_visiteur', 'v_visAccueil');
 	}
 	
@@ -53,6 +39,18 @@ class A_visiteur extends CI_Model {
 		$data['mesFiches'] = $this->dataAccess->getFiches($idVisiteur);		
 		$this->templates->load('t_visiteur', 'v_visMesFiches', $data);	
 	}	
+	
+	/**
+	 * Ajouter un compte rendu
+	 *
+	 * @param $idVisiteur : l'id du visiteur
+	 * @param $mois : le mois de la fiche à modifier
+	 */
+
+	public function ajouterCR()
+	{	
+		$this->templates->load('t_visiteur', 'v_ajouterCR', $data);
+	}
 
 	/**
 	 * Présente le détail de la fiche sélectionnée 

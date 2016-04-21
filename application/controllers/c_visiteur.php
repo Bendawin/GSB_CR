@@ -36,7 +36,7 @@ class C_visiteur extends CI_Controller {
 				$this->load->model('a_visiteur');
 
 				// on n'est pas en mode "modification d'une fiche"
-				$this->session->unset_userdata('mois');
+				// $this->session->unset_userdata('mois');
 
 				$this->a_visiteur->accueil();
 			}
