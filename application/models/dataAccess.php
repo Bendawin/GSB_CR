@@ -35,10 +35,12 @@ class DataAccess extends CI_Model {
 	 */
 	
 	 public function getLesCR($idvisiteur){
+	 $VIS_MATRICULE = $idvisiteur; 
 	 $req = "SELECT rapport_visite.RAP_NUM as numero , rapport_visite.RAP_date as datevisite,CONCAT(praticien.PRA_NOM,"/ "/ , praticien.PRA_PRENOM) as praticien, NOW() as date, rapport_visite.RAP_MOTIF as motif ,rapport_visite.RAP_BILAN as BILAN 
-FROM rapport_visite INNER JOIN praticien on rapport_visite.PRA_NUM = praticien.PRA_NUM 
-where 1 ;
-	 ";
+			FROM rapport_visite INNER JOIN praticien on rapport_visite.PRA_NUM = praticien.PRA_NUM
+			where rapport_visite.VIS_MATRICULE=?";
+	 
+	 
 	 $rs = $this->db->query($req);
 	 $mesCR = $rs->result_array();
 	 return $mesCR;
