@@ -56,6 +56,12 @@ class C_visiteur extends CI_Controller {
 				$this->a_visiteur->ajouterCR();
 				
 			}
+			elseif ($action == 'voirCR')
+			{
+				$this->load->model('a_visiteur');
+				$this->a_visiteur->voirCR();
+			
+			}
 			
 			elseif ($action == 'deconnecter')	// deconnecter demandé : on active la fonction deconnecter du modèle authentif
 			{

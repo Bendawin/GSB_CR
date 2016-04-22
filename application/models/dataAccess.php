@@ -27,6 +27,21 @@ class DataAccess extends CI_Model {
 		$ligne = $rs->first_row('array'); 
 		return $ligne;
 	}
+	
+	/**
+	 * Retourne tous les comptes rendu
+	 *
+	 * @return un tableau associatif contenant les comptes rendu
+	 */
+	
+	 public function getLesCR(){
+	 $req = "";
+	 $rs = $this->db->query($req);
+	 $mesCR = $rs->result_array();
+	 return $mesCR;
+	 } 
+	
+	
 
 	/* DOC APPLIFRAIS
 	/**
