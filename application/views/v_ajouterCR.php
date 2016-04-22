@@ -1,3 +1,4 @@
+
 <?php
 	$this->load->helper('url');
 ?>
@@ -52,8 +53,10 @@
 </head>
 <body style = " ">
 
+<div id = "contenu">
+
 <div name="droite" style="float:left;width:80%;">
-	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD;color:white;height:88%;">
+	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD; height:88%;">
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">
 			<h1> Rapport de visite </h1>
 			<label class="titre">NUMERO :</label><input type="text" size="10" name="RAP_NUM" class="zone" />
@@ -85,5 +88,8 @@
 		</form>
 	</div>
 </div>
+</div>
+
 </body>
 </html>
+
