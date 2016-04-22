@@ -51,15 +51,15 @@
         }
     </script>
 </head>
-<body style = " ">
+<body>
 
 <div id = "contenu">
 
 <div name="droite" style="float:left;width:80%;">
-	<div name="bas" style="margin : 10 2 2 2;clear:left;background-color:77AADD; height:88%;">
+	<div name="bas" style="margin : 10 2 2 2;clear:left; height:88%;">
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">
 			<h1> Rapport de visite </h1>
-			<label class="titre">Niméro : </label><input type="text" size="10" name="RAP_NUM" class="zone" />
+			<label class="titre">Numéro : </label><input type="text" size="10" name="RAP_NUM" class="zone" />
 			<label class="titre">Date Visite : </label><input type="text" size="10" name="RAP_DATEVISITE" class="zone" />
 			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" ></select>
 			<!--  <label class="titre">Coefficient : </label><input type="text" size="6" name="PRA_COEFF" class="zone" /> -->

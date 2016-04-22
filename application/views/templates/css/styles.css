@@ -1,8 +1,10 @@
 /* Styles des divisions principales de la page */
 body{
-  background-color: #77AADD;
-	background-image: url(imgs/FONDGLOBAL.jpg);
-	background-repeat: repeat-x;
+	background-image: url('../images/labo.jpg');
+	background-attachment: fixed;
+	background-size: 100% 100% ;
+	cursor: auto;
+	opacity: 0.9;
   margin:0% 0%;
   padding : 0.6em;
   font-family:"Trebuchet MS",Verdana,Geneva,Arial,Helvetica,sans-serif;
