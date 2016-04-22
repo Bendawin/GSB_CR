@@ -24,13 +24,30 @@ class A_visiteur extends CI_Model {
 	}
 	
 	/**
+	 * Liste des comptes rendu existant
+	 *
+	 * 
+	 * @param $message : message facultatif destiné à notifier l'utilisateur du résultat d'une action précédemment exécutée
+	 */
+	public function mesFiches ($idVisiteur, $message=null)
+	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
+		
+		$idVisiteur = $this->session->userdata('idUser');
+		
+		$data['notify'] = $message;
+		$data['mesCR'] = $this->dataAccess->getLesCR($idVisiteur);
+		$this->templates->load('t_visiteur', 'v_visVoirCR', $data);
+	}
+	
+	
+	/**
 	 * Liste les fiches existantes du visiteur connecté et 
 	 * donne accès aux fonctionnalités associées
 	 *
 	 * @param $idVisiteur : l'id du visiteur 
 	 * @param $message : message facultatif destiné à notifier l'utilisateur du résultat d'une action précédemment exécutée
 	*/
-	public function mesFiches ($idVisiteur, $message=null)
+	/** public function mesFiches ($idVisiteur, $message=null)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 	
 		$idVisiteur = $this->session->userdata('idUser');
@@ -38,7 +55,7 @@ class A_visiteur extends CI_Model {
 		$data['notify'] = $message;
 		$data['mesFiches'] = $this->dataAccess->getFiches($idVisiteur);		
 		$this->templates->load('t_visiteur', 'v_visMesFiches', $data);	
-	}	
+	}	*/
 	
 	/**
 	 * Ajouter un compte rendu
