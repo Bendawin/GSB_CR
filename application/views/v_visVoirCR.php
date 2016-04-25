@@ -22,18 +22,21 @@
 	<tbody>
 	
 	<?php
-	foreach( $mesCR as $unCR)
-	{
-		
+	
+	
+		$indice = 1;
+		for ($i = 0; $i < count($mesCR) ; $i++)
+		{
 		echo
 			'<tr>
-				<td>'.$unCR['numero'].'</td>
-				<td>'.$unCR['date'].'<td>
-				<td>'.$unCR['dateVisite'].'<td>
-				<td>'.$unCR['motif'].'<td>
-				<td>'.$unCR['practicien'].'<td>
+				<td>'.$mesCR[$i]['numero'].'</td>
+				<td>'.$mesCR[$i]['date'].'<td>
+				<td>'.$mesCR[$i]['dateVisite'].'<td>
+				<td>'.$mesCR[$i]['motif'].'<td>
+				<td>'.$mesCR[$i]['practicien'].'<td>
 			</tr>';
-	}
+			$indice += 1;
+		}
 	?>
 	</tbody>
 </table>
@@ -43,4 +46,6 @@
 
 
 </div>
+
+	
 
