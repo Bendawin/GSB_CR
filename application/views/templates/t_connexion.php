@@ -23,6 +23,9 @@
 			<?php echo $body; ?>
 
 			<div id="pied">
+			<marquee>
+				Bienvenue sur le site GSB best site ever in Paris! Attention: nous sommes des pros!
+			</marquee>
 				<br/>
 			</div>
 

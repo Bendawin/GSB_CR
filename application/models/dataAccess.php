@@ -23,10 +23,12 @@ class DataAccess extends CI_Model {
 		$req = "select visiteur.VIS_MATRICULE as id, visiteur.VIS_NOM as nom, visiteur.VIS_PRENOM as prenom 
 				from visiteur 
 				where visiteur.LOGIN=? and visiteur.MDP=?";
-		$rs = $this->db->query($req, array ($login, $mdp));
+		$rs = $this->db->query($req, array ($login, $mdp, $id));
 		$ligne = $rs->first_row('array'); 
 		return $ligne;
 	}
+	
+	
 	
 	/**
 	 * Retourne tous les comptes rendu
@@ -34,13 +36,12 @@ class DataAccess extends CI_Model {
 	 * @return un tableau associatif contenant les comptes rendu
 	 */
 	
-	 public function getLesCR($idvisiteur){
-	 $VIS_MATRICULE = $idvisiteur; 
-	 $req = "SELECT rapport_visite.RAP_NUM as numero , rapport_visite.RAP_date as datevisite,CONCAT(praticien.PRA_NOM,"/ "/ , praticien.PRA_PRENOM) as praticien, NOW() as date, rapport_visite.RAP_MOTIF as motif ,rapport_visite.RAP_BILAN as BILAN 
-			FROM rapport_visite INNER JOIN praticien on rapport_visite.PRA_NUM = praticien.PRA_NUM
-			where rapport_visite.VIS_MATRICULE=?";
-	 
-	 
+	 public function getLesCR($id){
+	 	$VIS_matricule = $id;
+	 $req = "select RAP_BILAN as bilan, RAP_DATE as date, RAP_MOTIF as motif, RAP_NUM as numero, PRA_NUM as practicien
+			from rapport_visite
+			where VIS_Matricule = ?
+			order by RAP_DATE desc";
 	 $rs = $this->db->query($req);
 	 $mesCR = $rs->result_array();
 	 return $mesCR;

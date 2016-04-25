@@ -21,16 +21,21 @@
 	</head>
 
 	<body onload="setTimeout(hideNotify,7000);">
+	
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo $v_path.'/templates/images/logo.jpg'?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
 				<h1>Gestion des frais de déplacements</h1>
+				
+										
+						
+				
 			</div>
-			
+		
 			<!-- Division pour le menu -->
 			<div id="menuGauche">
 				<div id="infosUtil">
-					<h2></h2>
+					<h2>ceci est une information utile</h2>
 				</div>  
 				
 				<ul id="menuList">
@@ -55,10 +60,15 @@
 				</ul>
 				
 			</div>
+			</span>
+	
 
 			<?php echo $body; ?>
 
 			<div id="pied">
+			<marquee>
+				Bienvenue sur le site GSB best site ever in Paris! Attention: nous sommes des pros!
+			</marquee>
 				<br/>
 			</div>
 
