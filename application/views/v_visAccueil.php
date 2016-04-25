@@ -1,5 +1,5 @@
 <div id="contenu">
-	<h2>Gestion des frais des comptes-rendus</h2>
+	<h2>Gestion des comptes-rendus</h2>
 	<p>Bienvenue dans votre application de gestion des comptes-rendus. </p>
 	<p>
 		Afin de fournir vos rapports de visite, des informations sur votre médecin traitant ou encore les états de frais pour lesquels vous percevez des remboursements, vous devez compléter des fiches de comptes-rendus. Voici des informations utiles les concernant:
