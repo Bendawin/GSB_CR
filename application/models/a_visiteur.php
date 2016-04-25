@@ -29,7 +29,7 @@ class A_visiteur extends CI_Model {
 	 * 
 	 * @param $message : message facultatif destiné à notifier l'utilisateur du résultat d'une action précédemment exécutée
 	 */
-	public function mesFiches ($idVisiteur, $message=null)
+	public function voirCR ($idVisiteur, $message=null)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		
 		$idVisiteur = $this->session->userdata('idUser');

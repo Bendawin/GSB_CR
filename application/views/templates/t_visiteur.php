@@ -51,7 +51,7 @@
 						<?php echo anchor('c_visiteur/ajouterCR', 'Ajouter un compte rendu', 'title="Ajouter un compte rendu"'); ?>
 					</li>
 					<li class="smenu">
-						<?php echo anchor('c_visiteur/mesFiches', 'Voir les comptes rendus', 'title="Consultation des comptes rendus"'); ?>
+						<?php echo anchor('c_visiteur/voirCR', 'Voir les comptes rendus', 'title="Consultation des comptes rendus"'); ?>
 					</li>
 					<br/>
 					<li class="smenu">
