@@ -38,7 +38,6 @@
 	</tbody>
 </table>
 
-<?php echo $idUser; ?>
 
 
 
