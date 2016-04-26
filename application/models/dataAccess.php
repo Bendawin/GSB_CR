@@ -34,9 +34,9 @@ class DataAccess extends CI_Model {
 	 * @return un tableau associatif contenant les comptes rendu
 	 */
 	
-	 public function getLesCR($id){
+	 public function getLesCR($idUser){
 	 
-	 $req = "select RAP_BILAN as bilan, RAP_DATE as date, RAP_MOTIF as motif, RAP_NUM as numero, PRA_NUM as practicien from rapport_visite	where VIS_Matricule = '" . $id . "' order by RAP_DATE desc";
+	 $req = "select RAP_BILAN as bilan, RAP_DATE as dateVisite, RAP_MOTIF as motifVisite, RAP_NUM as numero, PRA_NUM as practicien from rapport_visite	where VIS_Matricule = '" . $idUser . "' order by RAP_DATE desc";
 	 $rs = $this->db->query($req);
 	 $mesCR = $rs->result_array();
 	 return $mesCR;

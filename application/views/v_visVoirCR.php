@@ -11,10 +11,8 @@
 	<thead>
 		<tr>
 			<th> Numéro </th>
-			<th> Date </th>
 			<th> Date Visite </th>
 			<th> Motif </th>
-			<th> Practicien </th>
 			
 		</tr>
 	</thead>
@@ -30,10 +28,9 @@
 		echo
 			'<tr>
 				<td>'.$mesCR[$i]['numero'].'</td>
-				<td>'.$mesCR[$i]['date'].'<td>
-				<td>'.$mesCR[$i]['dateVisite'].'<td>
-				<td>'.$mesCR[$i]['motif'].'<td>
-				<td>'.$mesCR[$i]['practicien'].'<td>
+				<td>'.$mesCR[$i]['dateVisite'].'</td>
+				<td>'.$mesCR[$i]['motifVisite'].'</td>
+				
 			</tr>';
 			$indice += 1;
 		}
@@ -41,7 +38,7 @@
 	</tbody>
 </table>
 
-
+<?php echo $idUser; ?>
 
 
 
