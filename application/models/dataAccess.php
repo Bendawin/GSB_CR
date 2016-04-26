@@ -42,6 +42,12 @@ class DataAccess extends CI_Model {
 	 return $mesCR;
 	 } 
 	
+	 public function getLesMedicaments(){
+	 $req = "select medicament.MED_NOMCOMMERCIAL as medicament from medicament ORDER BY MED_NOMCOMMERCIAL";
+	 $rs = $this->db->query($req);
+	 $mesMedicaments =$rs->result_array() ;
+	 return $mesMedicaments ;
+	 }
 	
 
 	/* DOC APPLIFRAIS
@@ -179,7 +185,7 @@ class DataAccess extends CI_Model {
 	/**
 	 * Crée une nouvelle fiche de frais et les lignes de frais au forfait pour un visiteur et un mois donnés
 	 * L'état de la fiche est mis à 'CR'
-	 * Lles lignes de frais forfait sont affectées de quantités nulles et du montant actuel de FraisForfait
+	 * Les lignes de frais forfait sont affectées de quantités nulles et du montant actuel de FraisForfait
 	 * 
 	 * @param $idVisiteur 
 	 * @param $mois sous la forme aaaamm

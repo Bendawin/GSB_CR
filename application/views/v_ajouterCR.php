@@ -63,7 +63,7 @@
 			<label class="titre">Date Visite : </label><input type="text" size="10" name="RAP_DATEVISITE" class="zone" />
 			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" ></select>
 			<!--  <label class="titre">Coefficient : </label><input type="text" size="6" name="PRA_COEFF" class="zone" /> -->
-			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" checked="false" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/><select name="PRA_REMPLACANT" disabled="disabled" class="zone" ></select>
+			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/><select name="PRA_REMPLACANT" disabled="disabled" class="zone" ></select>
 			<label class="titre">Date : </label><input type="text" size="19" name="RAP_DATE" class="zone" />
 			<label class="titre">Motif : </label><select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
 											<option value="PRD">Périodicité</option>
@@ -74,17 +74,19 @@
 										</select><input type="text" name="RAP_MOTIFAUTRE" class="zone" disabled="disabled" />
 			<label class="titre">Bilan : </label><textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>
 			<label class="titre" ><h3> Eléments présentés </h3></label>
+			
 			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone"></select>
 			<label class="titre" >Produit 2 : </label><select name="PROD2" class="zone"></select>
-			<label class="titre">Documentation Offerte : </label><input name="RAP_DOC" type="checkbox" class="zone" checked="false" />
+			<label class="titre">Documentation Offerte : </label><input name="RAP_DOC" type="checkbox" class="zone" />
 			<label class="titre"><h3>Echantillons </h3></label>
 			<div class="titre" id="lignes">
 				<label class="titre" >Produit : </label>
 				<select name="PRA_ECH1" class="zone"><option>Produits</option></select><input type="text" name="PRA_QTE1" size="2" class="zone"/>
 				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />			
 			</div>		
-			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" checked="false" />
-			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"></input>
+			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" />
+			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"  value="Valider maggle"></input>
+			
 		</form>
 	</div>
 </div>

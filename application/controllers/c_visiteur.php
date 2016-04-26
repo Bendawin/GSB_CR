@@ -53,6 +53,7 @@ class C_visiteur extends CI_Controller {
 			elseif ($action == 'ajouterCR')
 			{
 				$this->load->model('a_visiteur');
+				$data['med'] = $this->dataAccess->getLesMedicaments();
 				$this->a_visiteur->ajouterCR();
 				
 			}
@@ -68,7 +69,8 @@ class C_visiteur extends CI_Controller {
 				$this->load->model('authentif');
 				$this->authentif->deconnecter();
 			}
-			elseif ($action == 'voirFiche')		// voirFiche demandé : on active la fonction voirFiche du modèle authentif
+			/* 
+			 elseif ($action == 'voirFiche')		// voirFiche demandé : on active la fonction voirFiche du modèle authentif
 			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à consulter)
 			
 				$this->load->model('a_visiteur');
@@ -170,7 +172,9 @@ class C_visiteur extends CI_Controller {
 
 				// ... et on revient en modification de la fiche
 				$this->a_visiteur->modFiche($idUser, $mois, 'Ligne "Hors forfait" supprimée ...');				
-			}
+			} 
+			
+			*/
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
 			{
 				show_404();
