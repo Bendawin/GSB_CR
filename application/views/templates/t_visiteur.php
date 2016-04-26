@@ -35,7 +35,7 @@
 			<!-- Division pour le menu -->
 			<div id="menuGauche">
 				<div id="infosUtil">
-					<h2>ceci est une information utile</h2>
+					<h2>Je vous emmerde et je rentre à ma maison</h2>
 				</div>  
 				
 				<ul id="menuList">
