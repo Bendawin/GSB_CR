@@ -40,8 +40,8 @@ class DataAccess extends CI_Model {
 	 	$VIS_matricule = $id;
 	 $req = "select RAP_BILAN as bilan, RAP_DATE as date, RAP_MOTIF as motif, RAP_NUM as numero, PRA_NUM as practicien
 			from rapport_visite
-			where VIS_Matricule = ?
-			order by RAP_DATE desc";
+			where VIS_Matricule = " + $id + " 
+	 		order by RAP_DATE desc";
 	 $rs = $this->db->query($req);
 	 $mesCR = $rs->result_array();
 	 return $mesCR;
