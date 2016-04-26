@@ -37,7 +37,6 @@ class DataAccess extends CI_Model {
 	 */
 	
 	 public function getLesCR($id){
-	 	$VIS_matricule = $id;
 	 $req = "select RAP_BILAN as bilan, RAP_DATE as date, RAP_MOTIF as motif, RAP_NUM as numero, PRA_NUM as practicien
 			from rapport_visite
 			where VIS_Matricule = " + $id + " 
