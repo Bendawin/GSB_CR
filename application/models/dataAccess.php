@@ -20,9 +20,7 @@ class DataAccess extends CI_Model {
 	 * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 	*/
 	public function getInfosVisiteur($login, $mdp){
-		$req = "select visiteur.VIS_MATRICULE as id, visiteur.VIS_NOM as nom, visiteur.VIS_PRENOM as prenom 
-				from visiteur 
-				where visiteur.LOGIN=? and visiteur.MDP=?";
+		$req = "select visiteur.VIS_MATRICULE as id, visiteur.VIS_NOM as nom, visiteur.VIS_PRENOM as prenom from visiteur where visiteur.LOGIN='". $login ."' and visiteur.MDP= '" . $mdp ."'" ;
 		$rs = $this->db->query($req, array ($login, $mdp, $id));
 		$ligne = $rs->first_row('array'); 
 		return $ligne;
@@ -39,7 +37,6 @@ class DataAccess extends CI_Model {
 	 public function getLesCR($id){
 	 
 	 $req = "select RAP_BILAN as bilan, RAP_DATE as date, RAP_MOTIF as motif, RAP_NUM as numero, PRA_NUM as practicien from rapport_visite	where VIS_Matricule = '" . $id . "' order by RAP_DATE desc";
-	 echo $req;
 	 $rs = $this->db->query($req);
 	 $mesCR = $rs->result_array();
 	 return $mesCR;
