@@ -99,7 +99,7 @@
 				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />			
 			</div>		
 			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" />
-			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"  value="Valider maggle"></input>
+			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"  value="Valider"></input>
 			
 		</form>
 	</div>
