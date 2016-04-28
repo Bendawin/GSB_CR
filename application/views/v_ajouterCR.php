@@ -130,7 +130,7 @@
 				
 			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" />
 
-			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"  value="Valider"></input>
+			
 
 			
 		<!-- BTN VALIDER ANNULER -->
@@ -140,7 +140,7 @@
 					<input type="submit"  value="Valider"></input>
 				</div>
 		</form>
-	
+	</div>
 </div>
 </div>
 
