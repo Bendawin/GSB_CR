@@ -44,7 +44,7 @@ class C_visiteur extends CI_Controller {
 			elseif ($action == 'ajouterCR')
 			{
 				$this->load->model('a_visiteur');
-				$data['med'] = $this->dataAccess->getLesMedicaments();
+				// $data['lesMedic'] = $this->dataaccess->getLesMedic();
 				$this->a_visiteur->ajouterCR();
 				
 			}

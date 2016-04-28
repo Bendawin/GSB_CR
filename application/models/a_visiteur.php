@@ -8,7 +8,7 @@ class A_visiteur extends CI_Model {
         parent::__construct();
 
 		// chargement du modèle d'accès aux données qui est utile à toutes les méthodes
-		$this->load->model('dataAccess');
+		$this->load->model('dataaccess');
     }
 
 	/**
@@ -34,8 +34,9 @@ class A_visiteur extends CI_Model {
 	    
 		$idUser = $this->session->userdata('idUser');		
 		$data['notify'] = $message;
-		$data['mesCR'] = $this->dataAccess->getLesCR($idUser);
+		$data['mesCR'] = $this->dataaccess->getLesCR($idUser);
 		$data['idUser']=$idUser;
+
 		$this->templates->load('t_visiteur', 'v_visVoirCR', $data);
 	}
 	
@@ -49,7 +50,8 @@ class A_visiteur extends CI_Model {
 	public function ajouterCR()
 	{	
 		
-		$this->templates->load('t_visiteur', 'v_ajouterCR');
+		$data['lesMedic']= $this->dataaccess->getLesMedic();
+		$this->templates->load('t_visiteur', 'v_ajouterCR', $data);
 	}
 
 	
@@ -69,8 +71,8 @@ class A_visiteur extends CI_Model {
 
 		$data['numAnnee'] = substr( $mois,0,4);
 		$data['numMois'] = substr( $mois,4,2);
-		$data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idUser,$mois);
-		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idUser,$mois);		
+		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idUser,$mois);
+		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idUser,$mois);		
 
 		$this->templates->load('t_visiteur', 'v_visVoirListeFrais', $data);
 	}
@@ -89,8 +91,8 @@ class A_visiteur extends CI_Model {
 		$data['notify'] = $message;
 		$data['numAnnee'] = substr( $mois,0,4);
 		$data['numMois'] = substr( $mois,4,2);
-		$data['lesFraisHorsForfait'] = $this->dataAccess->getLesLignesHorsForfait($idUser,$mois);
-		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idUser,$mois);		
+		$data['lesFraisHorsForfait'] = $this->dataaccess->getLesLignesHorsForfait($idUser,$mois);
+		$data['lesFraisForfait'] = $this->dataaccess->getLesLignesForfait($idUser,$mois);		
 
 		$this->templates->load('t_visiteur', 'v_visModListeFrais', $data);
 	}
@@ -106,7 +108,7 @@ class A_visiteur extends CI_Model {
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		// TODO : intégrer une fonctionnalité d'impression PDF de la fiche
 
-	    $this->dataAccess->signeFiche($idUser, $mois);
+	    $this->dataaccess->signeFiche($idUser, $mois);
 	}
 	*/
 	/**
@@ -120,8 +122,8 @@ class A_visiteur extends CI_Model {
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 		// TODO : valider les données contenues dans $lesFrais ...
 		
-		$this->dataAccess->majLignesForfait($idUser,$mois,$lesFrais);
-		$this->dataAccess->recalculeMontantFiche($idUser,$mois);
+		$this->dataaccess->majLignesForfait($idUser,$mois,$lesFrais);
+		$this->dataaccess->recalculeMontantFiche($idUser,$mois);
 	}
 	*/
 	/**
@@ -139,7 +141,7 @@ class A_visiteur extends CI_Model {
 		$libelle = $uneLigne['libelle'];
 		$montant = $uneLigne['montant'];
 
-		$this->dataAccess->creeLigneHorsForfait($idUser,$mois,$libelle,$dateFrais,$montant);
+		$this->dataaccess->creeLigneHorsForfait($idUser,$mois,$libelle,$dateFrais,$montant);
 	}
 
 	/**
@@ -152,7 +154,7 @@ class A_visiteur extends CI_Model {
 	public function supprLigneFrais($idUser, $mois, $idLigneFrais)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session et cohérents entre eux
 
-	    $this->dataAccess->supprimerLigneHorsForfait($idLigneFrais);
+	    $this->dataaccess->supprimerLigneHorsForfait($idLigneFrais);
 	} */
 	
 	/**
@@ -168,7 +170,7 @@ class A_visiteur extends CI_Model {
 	 $idUser = $this->session->userdata('idUser');
 	
 	 $data['notify'] = $message;
-	 $data['mesFiches'] = $this->dataAccess->getFiches($idUser);
+	 $data['mesFiches'] = $this->dataaccess->getFiches($idUser);
 	 $this->templates->load('t_visiteur', 'v_visMesFiches', $data);
 	 }	*/
 }

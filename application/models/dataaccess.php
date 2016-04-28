@@ -42,14 +42,14 @@ class DataAccess extends CI_Model {
 	 return $mesCR;
 	 } 
 	
-	 public function getLesMedicaments(){
+	 public function getLesMedic(){
 	 $req = "select medicament.MED_NOMCOMMERCIAL as medicament from medicament ORDER BY MED_NOMCOMMERCIAL";
 	 $rs = $this->db->query($req);
-	 $mesMedicaments =$rs->result_array() ;
-	 return $mesMedicaments ;
+	 $lesMedic =$rs->result_array() ;
+	 return $lesMedic;
 	 }
 	
-
+	
 	/* DOC APPLIFRAIS
 	/**
 	 * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait

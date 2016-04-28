@@ -76,6 +76,20 @@
 			<label class="titre" ><h3> Eléments présentés </h3></label>
 			
 			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone"></select>
+					<?php /*
+						$indice = 1;
+						for ($i = 0; $i < count('$lesMedic') ; $i++)
+						{
+							echo '<option value="PRD">'.$lesMedic[$i]['medicament'].'</option>';
+							$indice += 1;
+						}
+					
+					*/
+					?> 
+											
+											
+											
+											
 			<label class="titre" >Produit 2 : </label><select name="PROD2" class="zone"></select>
 			<label class="titre">Documentation Offerte : </label><input name="RAP_DOC" type="checkbox" class="zone" />
 			<label class="titre"><h3>Echantillons </h3></label>
