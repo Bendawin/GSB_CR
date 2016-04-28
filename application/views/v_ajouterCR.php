@@ -76,7 +76,7 @@
 			<label class="titre" ><h3> Eléments présentés </h3></label>
 			
 			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone"></select>
-					<?php /*
+					<?php 
 						$indice = 1;
 						for ($i = 0; $i < count('$lesMedic') ; $i++)
 						{
@@ -84,7 +84,7 @@
 							$indice += 1;
 						}
 					
-					*/
+					
 					?> 
 											
 											
