@@ -35,7 +35,7 @@
 			<!-- Division pour le menu -->
 			<div id="menuGauche">
 				<div id="infosUtil">
-					<h2>Je vous emmerde et je rentre à ma maison</h2>
+					<h2></h2>
 				</div>  
 				
 				<ul id="menuList">
@@ -67,7 +67,7 @@
 
 			<div id="pied">
 			<marquee>
-				Bienvenue sur le site GSB best site ever in Paris! Attention: nous sommes des pros!
+				Bienvenue sur le site GSB !
 			</marquee>
 				<br/>
 			</div>
