@@ -40,16 +40,7 @@ class C_visiteur extends CI_Controller {
 
 				$this->a_visiteur->accueil();
 			}
-		/*	elseif ($action == 'mesFiches')		// mesFiches demandé : on active la fonction mesFiches du modèle visiteur
-			{
-				$this->load->model('a_visiteur');
-
-				// on n'est pas en mode "modification d'une fiche"
-				$this->session->unset_userdata('mois');
-
-				$idUser = $this->session->userdata('idUser');
-				$this->a_visiteur->mesFiches($idUser);
-			} */
+	
 			elseif ($action == 'ajouterCR')
 			{
 				$this->load->model('a_visiteur');
@@ -69,6 +60,28 @@ class C_visiteur extends CI_Controller {
 				$this->load->model('authentif');
 				$this->authentif->deconnecter();
 			}
+			
+			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
+			{
+				show_404();
+			}
+			
+			
+			
+			
+			
+/* CODE INUTILE - APPLIFRAIS */
+			
+			/*	elseif ($action == 'mesFiches')		// mesFiches demandé : on active la fonction mesFiches du modèle visiteur
+			 {
+			$this->load->model('a_visiteur');
+			
+			// on n'est pas en mode "modification d'une fiche"
+			$this->session->unset_userdata('mois');
+			
+			$idUser = $this->session->userdata('idUser');
+			$this->a_visiteur->mesFiches($idUser);
+			} */
 			/* 
 			 elseif ($action == 'voirFiche')		// voirFiche demandé : on active la fonction voirFiche du modèle authentif
 			{	// TODO : contrôler la validité du second paramètre (mois de la fiche à consulter)
@@ -175,10 +188,7 @@ class C_visiteur extends CI_Controller {
 			} 
 			
 			*/
-			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
-			{
-				show_404();
-			}
+			
 		}
 	}
 }
