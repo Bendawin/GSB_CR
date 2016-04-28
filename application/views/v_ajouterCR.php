@@ -72,23 +72,75 @@
 											<option value="SOL">Sollicitation praticien</option>
 											<option value="AUT">Autre</option>
 										</select><input type="text" name="RAP_MOTIFAUTRE" class="zone" disabled="disabled" />
+										
+										
+										
+										
 			<label class="titre">Bilan : </label><textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>
 			<label class="titre" ><h3> Eléments présentés </h3></label>
 			
-			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone"></select>
-			<label class="titre" >Produit 2 : </label><select name="PROD2" class="zone"></select>
-			<label class="titre">Documentation Offerte : </label><input name="RAP_DOC" type="checkbox" class="zone" />
+			
+		<!-- PRODUIT 1 -->
+			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone">
+				<?php $indice = 1;
+						for ($i = 0; $i < count($lesMedic) ; $i++)
+						{
+							echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
+							$indice += 1;
+						} 
+				?> 
+			</select>
+			
+																			
+		<!-- PRODUIT 2 -->									
+			<label class="titre" >Produit 2 : </label><select name="PROD2" class="zone">
+				<?php 
+						$indice = 1;
+						for ($i = 0; $i < count($lesMedic) ; $i++)
+						{
+							echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
+							$indice += 1;
+						} 
+				?> 
+			</select>
+			
+			
+		<!-- DOCUMENT OFFERT -->	
+			<label class="titre">Documentation Offerte : </label>
+				<input name="RAP_DOC" type="checkbox" class="zone" />
+		
+		<!-- ECHANTILLONS -->
 			<label class="titre"><h3>Echantillons </h3></label>
+			
 			<div class="titre" id="lignes">
 				<label class="titre" >Produit : </label>
-				<select name="PRA_ECH1" class="zone"><option>Produits</option></select><input type="text" name="PRA_QTE1" size="2" class="zone"/>
+				<select name="PRA_ECH1" class="zone">
+					<?php 
+						$indice = 1;
+						for ($i = 0; $i < count($lesMedic) ; $i++)
+						{
+							echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
+							$indice += 1;
+						} 
+					?> 
+				</select>
+				<input type="text" name="PRA_QTE1" size="2" class="zone"/>
 				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />			
-			</div>		
+			</div>	
+				
 			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" />
-			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"  value="Valider maggle"></input>
+
+			<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"  value="Valider"></input>
+
 			
+		<!-- BTN VALIDER ANNULER -->
+			<label class="titre"></label>
+				<div class="zone">
+					<input type="reset" value="Annuler"></input>
+					<input type="submit"  value="Valider"></input>
+				</div>
 		</form>
-	</div>
+	
 </div>
 </div>
 
