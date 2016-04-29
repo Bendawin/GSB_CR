@@ -48,6 +48,13 @@ class DataAccess extends CI_Model {
 	 $lesMedic =$rs->result_array() ;
 	 return $lesMedic;
 	 }
+	 
+	 public function getLesPratic(){
+	 	$req = "select PRA_NUM as code, PRA_PRENOM as prenom, PRA_NOM as nom from praticien ORDER BY PRA_NOM";
+	 	$rs = $this->db->query($req);
+	 	$lesPratic =$rs->result_array() ;
+	 	return $lesPratic;
+	 }
 	
 	
 	/* DOC APPLIFRAIS

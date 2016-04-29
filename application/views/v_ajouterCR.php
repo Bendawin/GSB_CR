@@ -61,9 +61,33 @@
 			<h1> Rapport de visite </h1>
 			<label class="titre">Numéro : </label><input type="text" size="10" name="RAP_NUM" class="zone" />
 			<label class="titre">Date Visite : </label><input type="text" size="10" name="RAP_DATEVISITE" class="zone" />
-			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" ></select>
+	<!-- PRATICIEN -->
+			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" >
+			
+				<?php 
+						$indice = 1;
+						for ($i = 0; $i < count($lesPratic) ; $i++)
+						{
+							echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
+							$indice += 1;
+						} 
+					?> 
+				</select>
+			
 			<!--  <label class="titre">Coefficient : </label><input type="text" size="6" name="PRA_COEFF" class="zone" /> -->
-			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/><select name="PRA_REMPLACANT" disabled="disabled" class="zone" ></select>
+			
+			
+			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
+				<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
+					<?php 
+						$indice = 1;
+						for ($i = 0; $i < count($lesPratic) ; $i++)
+						{
+							echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
+							$indice += 1;
+						} 
+					?> 
+				</select>
 			<label class="titre">Date : </label><input type="text" size="19" name="RAP_DATE" class="zone" />
 			<label class="titre">Motif : </label><select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
 											<option value="PRD">Périodicité</option>
