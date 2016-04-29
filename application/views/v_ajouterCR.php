@@ -64,7 +64,7 @@
 			<label class="titre">Numéro : </label><input type="text" size="10" name="RAP_NUM" class="zone" />
 	
 	<!-- DATE VISITE -->
-		<!--<label class="titre">Date Visite : </label><input type="text" size="10" name="RAP_DATEVISITE" class="zone" /> -->
+			<label class="titre">Date Visite : </label><input type="text" size="10" name="RAP_DATEVISITE" class="zone" /> 
 			
 	<!-- PRATICIEN -->
 			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" >
@@ -93,7 +93,7 @@
 						} 
 					?> 
 				</select>
-			<label class="titre">Date : </label><input type="text" size="19" name="RAP_DATE" class="zone" /> 
+		<!--<label class="titre">Date : </label><input type="text" size="19" name="RAP_DATE" class="zone" />-->
 			<label class="titre">Motif : </label><select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
 											<option value="PRD">Périodicité</option>
 											<option value="ACT">Actualisation</option>
