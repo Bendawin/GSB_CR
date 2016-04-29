@@ -64,7 +64,7 @@
 			<label class="titre">Numéro : </label><input type="text" size="10" name="RAP_NUM" class="zone" />
 	
 	<!-- DATE VISITE -->
-			<label class="titre">Date Visite : </label><input type="text" size="10" name="RAP_DATEVISITE" class="zone" /> 
+			<label class="titre">Date Visite : </label><input type="date" size="10" name="RAP_DATEVISITE" class="zone" /> 
 			
 	<!-- PRATICIEN -->
 			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" >
