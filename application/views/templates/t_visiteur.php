@@ -67,7 +67,7 @@
 
 			<div id="pied">
 			<marquee>
-				Bienvenue sur le site GSB !
+				Bienvenue sur le site GSB CR !
 			</marquee>
 				<br/>
 			</div>

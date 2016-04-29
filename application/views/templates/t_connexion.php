@@ -17,14 +17,14 @@
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo $v_path.'/templates/images/logo.jpg'?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
-				<h1>Gestion des comptes-rendus</h1>
+				<h1>Galaxy Swiss Bourdin<br/><br/>Gestion des comptes-rendus</h1>
 			</div>
 
 			<?php echo $body; ?>
 
 			<div id="pied">
 			<marquee>
-				Nous vous souhaitons une agréable navigation sur notre site GSB CR
+				Nous vous souhaitons une agréable navigation sur notre site GSB Comptes-Rendus
 			</marquee>
 				<br/>
 			</div>
