@@ -52,6 +52,7 @@ class A_visiteur extends CI_Model {
 		
 		$data['lesMedic']= $this->dataaccess->getLesMedic();
 		$data['lesPratic']= $this->dataaccess->getLesPratic();
+		$data['numauto']= $this->dataaccess->getNumAuto();
 		$this->templates->load('t_visiteur', 'v_ajouterCR', $data);
 	}
 
