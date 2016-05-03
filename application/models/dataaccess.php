@@ -56,13 +56,15 @@ class DataAccess extends CI_Model {
 	 	return $lesPratic;
 	 }
 	 
-	 public function getNumAuto(){	 	
-	 	$req = "select MAX(RAP_NUM) from praticien ";
+	/* public function getNumAuto(){	 	
+	 	$req = "select MAX(RAP_NUM) + 1 as dernier from rapport_visite";
 	 	$rs = $this->db->query($req);
-	 	$numauto = $rs->result_line() + 1;
+	 	$numero = $rs->result_array() ;
+	 	$numauto = intval($numero[0]) + 1; 
 	 	return $numauto;
 	 }
-	
+	 
+	*/
 	
 	/* DOC APPLIFRAIS
 	/**

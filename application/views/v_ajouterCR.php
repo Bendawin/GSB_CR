@@ -58,10 +58,10 @@
 <div name="droite" style="float:left;width:80%;">
 	<div name="bas" style="margin : 10 2 2 2;clear:left; height:88%;">
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">
-			<h1> Rapport de visite </h1>			
+			<h1> Rapport de visite </h1>
 			
 	<!-- NUMERO -->
-			<label class="titre">Numéro : </label><input type="text" size="10" name="RAP_NUM" class="zone" />
+		<!-- <p> Votre numéro de compte rendu est le <?php echo $numauto; ?> </p> -->
 	
 	<!-- DATE VISITE -->
 			<label class="titre">Date Visite : </label><input type="date" size="10" name="RAP_DATEVISITE" class="zone" /> 
@@ -78,10 +78,11 @@
 						} 
 					?> 
 				</select>
-			
+				
+	<!--COEFFICIENT -->		
 			<!--  <label class="titre">Coefficient : </label><input type="text" size="6" name="PRA_COEFF" class="zone" /> -->
 			
-			
+	<!-- REMPLACANT -->	
 			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
 				<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
 					<?php 
@@ -93,7 +94,11 @@
 						} 
 					?> 
 				</select>
+	
+	<!-- DATE -->
 		<!--<label class="titre">Date : </label><input type="text" size="19" name="RAP_DATE" class="zone" />-->
+		
+	<!-- MOTIF -->
 			<label class="titre">Motif : </label><select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
 											<option value="PRD">Périodicité</option>
 											<option value="ACT">Actualisation</option>
@@ -104,12 +109,14 @@
 										
 										
 										
-										
+	<!-- BILAN -->								
 			<label class="titre">Bilan : </label><textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>
+			
+	<!-- ELEMENTS PRESENTES -->		
 			<label class="titre" ><h3> Eléments présentés </h3></label>
 			
 			
-		<!-- PRODUIT 1 -->
+	<!-- PRODUIT 1 -->
 			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone">
 				<?php $indice = 1;
 						for ($i = 0; $i < count($lesMedic) ; $i++)
@@ -121,7 +128,7 @@
 			</select>
 			
 																			
-		<!-- PRODUIT 2 -->									
+	<!-- PRODUIT 2 -->									
 			<label class="titre" >Produit 2 : </label><select name="PROD2" class="zone">
 				<?php 
 						$indice = 1;
@@ -134,11 +141,11 @@
 			</select>
 			
 			
-		<!-- DOCUMENT OFFERT -->	
+	<!-- DOCUMENT OFFERT -->	
 			<label class="titre">Documentation Offerte : </label>
 				<input name="RAP_DOC" type="checkbox" class="zone" />
 		
-		<!-- ECHANTILLONS -->
+	<!-- ECHANTILLONS -->
 			<label class="titre"><h3>Echantillons </h3></label>
 			
 			<div class="titre" id="lignes">
@@ -162,7 +169,7 @@
 			
 
 			
-		<!-- BTN VALIDER ANNULER -->
+	<!-- BTN VALIDER ANNULER -->
 			<label class="titre"></label>
 				<div class="zone">
 					<input type="reset" value="Annuler"></input>
