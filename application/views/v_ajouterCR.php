@@ -61,7 +61,7 @@
 			<h1> Rapport de visite </h1>
 			
 	<!-- NUMERO -->
-		<!-- <p> Votre numéro de compte rendu est le <?php echo $numauto; ?> </p> -->
+		<!-- <p> Votre numéro de compte rendu est le </p> --> 
 	
 	<!-- DATE VISITE -->
 			<label class="titre">Date Visite : </label><input type="date" size="10" name="RAP_DATEVISITE" class="zone" /> 
