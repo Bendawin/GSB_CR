@@ -34,13 +34,14 @@
 	</script>
 	
 	 <script language="javascript">
-	 
+
+		
+		
         function ajoutLigne(pNumero)
         {
 
             //ajoute une ligne de produits/qté à la div "lignes"     
-			//masque le bouton en cours			
-			
+			//masque le bouton en cours		
 			document.getElementById("but"+pNumero).setAttribute("hidden","true");	
 			pNumero++;										//incrémente le numéro de ligne
             var laDiv=document.getElementById("lignes");	//récupère l'objet DOM qui contient les données
@@ -68,6 +69,7 @@
 			bouton.setAttribute("value","+");
 			bouton.setAttribute("class","zone");	
 			bouton.setAttribute("id","but"+ pNumero);	
+			document.getElementById('COMP').value=pNumero;
 						
         }
         
@@ -84,7 +86,12 @@
 	
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE">
 		
+		
 			<h1> Rapport de visite </h1>
+			
+	<!-- COMPTEUR -->
+	
+			<label class="titre">COMPTEUR : </label><input type="text" value = "1" id="COMP" name="COMP" class="zone" />
 			
 	<!-- NUMERO -->
 	

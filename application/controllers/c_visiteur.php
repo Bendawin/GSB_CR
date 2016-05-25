@@ -68,24 +68,25 @@ class C_visiteur extends CI_Controller {
 				$date = $_POST['RAP_DATEVISITE'];
 				$praticien = $_POST['PRA_NUM'];
 				
-			if($_POST['REMP_CHECK'] == true)
-			{
-				$praticien = $_POST['PRA_REMPLACANT'];
-			}
-				
-			if ($motif = $_POST['RAP_MOTIF'] == 'AUT')
-			{
-				$motif = $_POST['RAP_MOTIFAUTRE'];
-			}
-				
-			$bilan = $_POST['RAP_BILAN'];
-			$produit1 = $_POST['PROD1'];
-			$produit2 = $_POST['PROD2'];				
-			$echantillon = $_POST['PRA_ECH1'];
-				
-			$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
-			}
+				if(isset($_POST['REMP_CHECK']))
+				{
+					$praticien = $_POST['PRA_REMPLACANT'];
+				}
 			
+				if ($motif = $_POST['RAP_MOTIF'] == 'AUT')
+				{
+					$motif = $_POST['RAP_MOTIFAUTRE'];
+				}
+				
+				$bilan = $_POST['RAP_BILAN'];
+				$produit1 = $_POST['PROD1'];
+				$produit2 = $_POST['PROD2'];				
+				$echantillon = $_POST['PRA_ECH1'];
+				$compteur = $_POST['COMP'];
+				echo $compteur;
+				//$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
+			
+			}
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
 			{
 				show_404();
