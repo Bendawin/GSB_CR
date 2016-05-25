@@ -44,13 +44,13 @@
 						<?php echo $this->session->userdata('prenom')."  ".$this->session->userdata('nom');  ?>
 					</li>
 					<br/>
-					<li class="smenu">
+					<li class="smenu"> <br/>
 						<?php echo anchor('c_visiteur/', 'Accueil', 'title="Page d\'accueil"'); ?>
 					</li>
-					<li class="smenu">
+					<li class="smenu"> <br/>
 						<?php echo anchor('c_visiteur/ajouterCR', 'Ajouter un compte rendu', 'title="Ajouter un compte rendu"'); ?>
 					</li>
-					<li class="smenu">
+					<li class="smenu"> <br/>
 						<?php echo anchor('c_visiteur/voirCR', 'Voir les comptes rendus', 'title="Consultation des comptes rendus"'); ?>
 					</li>
 					<br/>
