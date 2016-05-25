@@ -56,18 +56,26 @@
 <div id = "contenu">
 
 <div name="droite" style="float:left;width:80%;">
+
 	<div name="bas" style="margin : 10 2 2 2;clear:left; height:88%;">
+	
 		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE">
+		
 			<h1> Rapport de visite </h1>
 			
 	<!-- NUMERO -->
+	
 		<!-- <p> Votre numéro de compte rendu est le </p> --> 
 	
 	<!-- DATE VISITE -->
+	
 			<label class="titre">Date Visite : </label><input type="date" size="10" name="RAP_DATEVISITE" class="zone" /> 
 			
 	<!-- PRATICIEN -->
-			<label class="titre">Praticien : </label><select  name="PRA_NUM" class="zone" >
+	
+			<label class="titre">Praticien : </label>
+			
+			<select  name="PRA_NUM" class="zone" >
 			
 				<?php 
 						$indice = 1;
@@ -77,14 +85,21 @@
 							$indice += 1;
 						} 
 					?> 
-				</select>
+					
+			</select>
 				
-	<!--COEFFICIENT -->		
+	<!--COEFFICIENT -->	
+		
 			<!--  <label class="titre">Coefficient : </label><input type="text" size="6" name="PRA_COEFF" class="zone" /> -->
 			
 	<!-- REMPLACANT -->	
-			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" name = "REMP_CHECK" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
-				<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
+	
+			<label class="titre">Remplaçant : </label>
+			
+			<input type="checkbox" class="zone" name = "REMP_CHECK" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
+			
+			<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
+			
 					<?php 
 						$indice = 1;
 						for ($i = 0; $i < count($lesPratic) ; $i++)
@@ -93,31 +108,48 @@
 							$indice += 1;
 						} 
 					?> 
-				</select>
+					
+			</select>
 	
 	<!-- DATE -->
+	
 		<!--<label class="titre">Date : </label><input type="text" size="19" name="RAP_DATE" class="zone" />-->
 		
 	<!-- MOTIF -->
-			<label class="titre">Motif : </label><select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
-											<option value="PRD">Périodicité</option>
-											<option value="ACT">Actualisation</option>
-											<option value="REL">Relance</option>
-											<option value="SOL">Sollicitation praticien</option>
-											<option value="AUT">Autre</option>
-										</select><input type="text" name="RAP_MOTIFAUTRE" class="zone" disabled="disabled" />
-										
-										
-										
-	<!-- BILAN -->								
-			<label class="titre">Bilan : </label><textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>
+	
+			<label class="titre">Motif :</label>
 			
-	<!-- ELEMENTS PRESENTES -->		
-			<label class="titre" ><h3> Eléments présentés </h3></label>
+			<select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
 			
+				<option value="PRD">Périodicité</option>
+				<option value="ACT">Actualisation</option>
+				<option value="REL">Relance</option>
+				<option value="SOL">Sollicitation praticien</option>
+				<option value="AUT">Autre</option>
+				
+			</select>
+										
+			<input type="text" name="RAP_MOTIFAUTRE" class="zone" disabled="disabled" />
+										
+										
+										
+	<!-- BILAN -->	
+			
+			<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"></head>
+								
+			<label class="titre">Bilan : </label>	
+					
+			<textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>
+			
+	<!-- ELEMENTS PRESENTES -->	
+		
+			<label class="titre" ><h3> Eléments présentés </h3></label>			
 			
 	<!-- PRODUIT 1 -->
-			<label class="titre" >Produit 1 : </label><select name="PROD1" class="zone">
+	
+			<label class="titre" >Produit 1 : </label>
+			
+			<select name="PROD1" class="zone">
 				<?php $indice = 1;
 						for ($i = 0; $i < count($lesMedic) ; $i++)
 						{
@@ -125,11 +157,14 @@
 							$indice += 1;
 						} 
 				?> 
-			</select>
-			
+			</select>			
 																			
-	<!-- PRODUIT 2 -->									
-			<label class="titre" >Produit 2 : </label><select name="PROD2" class="zone">
+	<!-- PRODUIT 2 -->
+										
+			<label class="titre" >Produit 2 : </label>
+			
+			<select name="PROD2" class="zone">
+			
 				<?php 
 						$indice = 1;
 						for ($i = 0; $i < count($lesMedic) ; $i++)
@@ -138,19 +173,26 @@
 							$indice += 1;
 						} 
 				?> 
+				
 			</select>
 			
 			
-	<!-- DOCUMENT OFFERT -->	
+	<!-- DOCUMENT OFFERT -->
+		
 			<label class="titre">Documentation Offerte : </label>
-				<input name="RAP_DOC" type="checkbox" class="zone" />
+			
+			<input name="RAP_DOC" type="checkbox" class="zone" />
 		
 	<!-- ECHANTILLONS -->
+	
 			<label class="titre"><h3>Echantillons </h3></label>
 			
 			<div class="titre" id="lignes">
-				<label class="titre" >Produit : </label>
-				<select name="PRA_ECH1" class="zone">
+			
+			<label class="titre" >Produit :</label>
+				
+			<select name="PRA_ECH1" class="zone">
+			
 					<?php 
 						$indice = 1;
 						for ($i = 0; $i < count($lesMedic) ; $i++)
@@ -159,27 +201,36 @@
 							$indice += 1;
 						} 
 					?> 
-				</select>
+					
+			</select>
+			
 				<input type="text" name="PRA_QTE1" size="2" class="zone"/>
-				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />			
+				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />	
+						
 			</div>	
 				
 			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" />
-
-			
-
 			
 	<!-- BTN VALIDER ANNULER -->
+	
 			<label class="titre"></label>
-				<div class="zone">
-					<input type="reset" value="Annuler"></input>
-					<input type="submit"  value="Valider"></input>
-				</div>
+			
+			<div class="zone">	
+								
+				<input type="submit"  value="Valider"></input>
+				<input type="reset" value="Annuler"></input>
+					
+			</div>
+			
 		</form>
+		
 	</div>
+	
 </div>
+
 </div>
 
 </body>
+
 </html>
 

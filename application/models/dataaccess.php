@@ -43,17 +43,25 @@ class DataAccess extends CI_Model {
 	 } 
 	
 	 public function getLesMedic(){
-	 $req = "select medicament.MED_NOMCOMMERCIAL as medicament from medicament ORDER BY MED_NOMCOMMERCIAL";
+	 $req = "select medicament.MED_DEPOTLEGAL as code ,medicament.MED_NOMCOMMERCIAL as medicament from medicament ORDER BY MED_NOMCOMMERCIAL";
 	 $rs = $this->db->query($req);
 	 $lesMedic =$rs->result_array() ;
 	 return $lesMedic;
 	 }
 	 
 	 public function getLesPratic(){
-	 	$req = "select PRA_NUM as code, PRA_PRENOM as prenom, PRA_NOM as nom from praticien ORDER BY PRA_NOM";
-	 	$rs = $this->db->query($req);
-	 	$lesPratic =$rs->result_array() ;
-	 	return $lesPratic;
+	 $req = "select PRA_NUM as code, PRA_PRENOM as prenom, PRA_NOM as nom from praticien ORDER BY PRA_NOM";
+	 $rs = $this->db->query($req);
+	 $lesPratic =$rs->result_array() ;
+	 return $lesPratic;
+	 }
+	 
+	 
+	 public function insertData($date, $praticien, $motif, $bilan, $produit1, $produit2, $echantillon){
+	 $matricule = $this->session->userdata('idUser');
+	 $req = "INSERT INTO rapport_visite(vis_matricule, pra_num, rap_date, rap_bilan, rap_motif)
+	 		VALUES ($matricule, $praticien, $date, $bilan, $motif)";
+	 $rs = $this->db->query($req);
 	 }
 	 
 	/* public function getNumAuto(){	 	

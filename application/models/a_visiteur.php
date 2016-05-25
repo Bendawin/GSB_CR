@@ -35,7 +35,7 @@ class A_visiteur extends CI_Model {
 		$idUser = $this->session->userdata('idUser');		
 		$data['notify'] = $message;
 		$data['mesCR'] = $this->dataaccess->getLesCR($idUser);
-		$data['idUser']=$idUser;
+		$data['idUser'] = $idUser;
 
 		$this->templates->load('t_visiteur', 'v_visVoirCR', $data);
 	}

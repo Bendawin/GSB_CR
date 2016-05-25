@@ -26,6 +26,7 @@ class C_visiteur extends CI_Controller {
 			$data = array();
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
+		
 		else
 		{
 			// Aiguillage selon l'action demandée 
@@ -48,6 +49,7 @@ class C_visiteur extends CI_Controller {
 				$this->a_visiteur->ajouterCR();
 				
 			}
+			
 			elseif ($action == 'voirCR')
 			{
 				$this->load->model('a_visiteur');
@@ -60,35 +62,28 @@ class C_visiteur extends CI_Controller {
 				$this->load->model('authentif');
 				$this->authentif->deconnecter();
 			}
+			
 			elseif($action == 'recupRAPPORT_VISITE')
 			{
 				$date = $_POST['RAP_DATEVISITE'];
 				$praticien = $_POST['PRA_NUM'];
 				
-				if($_POST['REMP_CHECK']== true)
-				{
-				$remplacant = $_POST['PRA_REMPLACANT'];
-				}
+			if($_POST['REMP_CHECK'] == true)
+			{
+				$praticien = $_POST['PRA_REMPLACANT'];
+			}
 				
-				if ($motif = $_POST['RAP_MOTIF'] == 'AUT')
-				{
-				$motifAutre = $_POST['RAP_MOTIFAUTRE'];
-				}
+			if ($motif = $_POST['RAP_MOTIF'] == 'AUT')
+			{
+				$motif = $_POST['RAP_MOTIFAUTRE'];
+			}
 				
-				$bilan = $_POST['RAP_BILAN'];
-				$produit1 = $_POST['PROD1'];
-				$produit2 = $_POST['PROD2'];				
-				$echantillon = $_POST['PRA_ECH1'];
+			$bilan = $_POST['RAP_BILAN'];
+			$produit1 = $_POST['PROD1'];
+			$produit2 = $_POST['PROD2'];				
+			$echantillon = $_POST['PRA_ECH1'];
 				
-				echo $date;
-				echo $praticien;
-				echo $remplacant;
-				echo $motif;
-				echo $motifAutre;
-				echo $bilan;
-				echo $produit1;
-				echo $produit2;
-				echo $echantillon;
+			$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
 			}
 			
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
