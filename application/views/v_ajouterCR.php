@@ -2,25 +2,45 @@
 <?php
 	$this->load->helper('url');
 ?>
-<html><head>
+<html>
+<head>
+
 	<title>formulaire RAPPORT_VISITE</title>
+	
 	<style type="text/css">
 		 body { margin-left: 100px; } 
 		label.titre { width : 180 ;  clear:left; float:left; } 
-		.zone { width : 30car ; float : left; color:5599EE }
-		
+		.zone { width : 30car ; float : left; color:5599EE }		
 	</style>
+	
 	<script language="javascript">
-		function selectionne(pValeur, pSelection,  pObjet) {
+	
+		function selectionne(pValeur, pSelection,  pObjet)
+		{
+			
 			//active l'objet pObjet du formulaire si la valeur sélectionnée (pSelection) est égale à la valeur attendue (pValeur)
-			if (pSelection==pValeur) 
-				{ formRAPPORT_VISITE.elements[pObjet].disabled=false; }
-			else { formRAPPORT_VISITE.elements[pObjet].disabled=true; }
+			
+			if (pSelection==pValeur)
+				{ 				
+					formRAPPORT_VISITE.elements[pObjet].disabled=false;				
+				}
+			
+			else
+				{ 
+					formRAPPORT_VISITE.elements[pObjet].disabled=true;
+				}
 		}
+		
 	</script>
+	
 	 <script language="javascript">
-        function ajoutLigne( pNumero){//ajoute une ligne de produits/qté à la div "lignes"     
-			//masque le bouton en cours
+	 
+        function ajoutLigne(pNumero)
+        {
+
+            //ajoute une ligne de produits/qté à la div "lignes"     
+			//masque le bouton en cours			
+			
 			document.getElementById("but"+pNumero).setAttribute("hidden","true");	
 			pNumero++;										//incrémente le numéro de ligne
             var laDiv=document.getElementById("lignes");	//récupère l'objet DOM qui contient les données
@@ -47,9 +67,12 @@
 			bouton.setAttribute("type","button");
 			bouton.setAttribute("value","+");
 			bouton.setAttribute("class","zone");	
-			bouton.setAttribute("id","but"+ pNumero);				
+			bouton.setAttribute("id","but"+ pNumero);	
+						
         }
+        
     </script>
+    
 </head>
 <body>
 
@@ -78,13 +101,13 @@
 			<select  name="PRA_NUM" class="zone" >
 			
 				<?php 
-						$indice = 1;
-						for ($i = 0; $i < count($lesPratic) ; $i++)
-						{
-							echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
-							$indice += 1;
-						} 
-					?> 
+					$indice = 1;
+					for ($i = 0; $i < count($lesPratic) ; $i++)
+					{
+						echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
+						$indice += 1;
+					} 
+				?> 
 					
 			</select>
 				
@@ -100,14 +123,14 @@
 			
 			<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
 			
-					<?php 
-						$indice = 1;
-						for ($i = 0; $i < count($lesPratic) ; $i++)
-						{
-							echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
-							$indice += 1;
-						} 
-					?> 
+				<?php 
+					$indice = 1;
+					for ($i = 0; $i < count($lesPratic) ; $i++)
+					{
+						echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
+						$indice += 1;
+					} 
+				?> 
 					
 			</select>
 	
@@ -150,13 +173,16 @@
 			<label class="titre" >Produit 1 : </label>
 			
 			<select name="PROD1" class="zone">
-				<?php $indice = 1;
-						for ($i = 0; $i < count($lesMedic) ; $i++)
-						{
-							echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
-							$indice += 1;
-						} 
+			
+				<?php
+					$indice = 1;
+					for ($i = 0; $i < count($lesMedic) ; $i++)
+					{
+						echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
+						$indice += 1;
+					} 
 				?> 
+				
 			</select>			
 																			
 	<!-- PRODUIT 2 -->
@@ -166,12 +192,12 @@
 			<select name="PROD2" class="zone">
 			
 				<?php 
-						$indice = 1;
-						for ($i = 0; $i < count($lesMedic) ; $i++)
-						{
-							echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
-							$indice += 1;
-						} 
+					$indice = 1;
+					for ($i = 0; $i < count($lesMedic) ; $i++)
+					{
+						echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
+						$indice += 1;
+					} 
 				?> 
 				
 			</select>
@@ -205,7 +231,9 @@
 			</select>
 			
 				<input type="text" name="PRA_QTE1" size="2" class="zone"/>
-				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />	
+				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />
+				<?php 
+				?>	
 						
 			</div>	
 				
