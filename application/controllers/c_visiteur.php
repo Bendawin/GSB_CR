@@ -62,7 +62,8 @@ class C_visiteur extends CI_Controller {
 			}
 			elseif($action == 'recupRAPPORT_VISITE')
 			{
-				echo "hey";
+				$date = $_POST['RAP_DATEVISITE'];
+				echo $date;
 			}
 			
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
