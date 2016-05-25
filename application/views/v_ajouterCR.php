@@ -57,7 +57,7 @@
 
 <div name="droite" style="float:left;width:80%;">
 	<div name="bas" style="margin : 10 2 2 2;clear:left; height:88%;">
-		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE.php">
+		<form name="formRAPPORT_VISITE" method="post" action="recupRAPPORT_VISITE">
 			<h1> Rapport de visite </h1>
 			
 	<!-- NUMERO -->

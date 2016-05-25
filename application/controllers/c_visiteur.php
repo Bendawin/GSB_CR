@@ -60,6 +60,10 @@ class C_visiteur extends CI_Controller {
 				$this->load->model('authentif');
 				$this->authentif->deconnecter();
 			}
+			elseif($action == 'recupRAPPORT_VISITE')
+			{
+				echo "hey";
+			}
 			
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
 			{
