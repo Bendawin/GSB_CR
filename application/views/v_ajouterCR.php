@@ -83,7 +83,7 @@
 			<!--  <label class="titre">Coefficient : </label><input type="text" size="6" name="PRA_COEFF" class="zone" /> -->
 			
 	<!-- REMPLACANT -->	
-			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
+			<label class="titre">Remplaçant : </label><input type="checkbox" class="zone" name = "REMP_CHECK" onClick="selectionne(true,this.checked,'PRA_REMPLACANT');"/>
 				<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
 					<?php 
 						$indice = 1;

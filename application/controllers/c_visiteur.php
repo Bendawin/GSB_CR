@@ -63,7 +63,32 @@ class C_visiteur extends CI_Controller {
 			elseif($action == 'recupRAPPORT_VISITE')
 			{
 				$date = $_POST['RAP_DATEVISITE'];
+				$praticien = $_POST['PRA_NUM'];
+				
+				if($_POST['REMP_CHECK']== true)
+				{
+				$remplacant = $_POST['PRA_REMPLACANT'];
+				}
+				
+				if ($motif = $_POST['RAP_MOTIF'] == 'AUT')
+				{
+				$motifAutre = $_POST['RAP_MOTIFAUTRE'];
+				}
+				
+				$bilan = $_POST['RAP_BILAN'];
+				$produit1 = $_POST['PROD1'];
+				$produit2 = $_POST['PROD2'];				
+				$echantillon = $_POST['PRA_ECH1'];
+				
 				echo $date;
+				echo $praticien;
+				echo $remplacant;
+				echo $motif;
+				echo $motifAutre;
+				echo $bilan;
+				echo $produit1;
+				echo $produit2;
+				echo $echantillon;
 			}
 			
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
