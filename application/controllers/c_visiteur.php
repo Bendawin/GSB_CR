@@ -80,10 +80,16 @@ class C_visiteur extends CI_Controller {
 				
 				$bilan = $_POST['RAP_BILAN'];
 				$produit1 = $_POST['PROD1'];
-				$produit2 = $_POST['PROD2'];				
-				$echantillon = $_POST['PRA_ECH1'];
-				$compteur = $_POST['COMP'];
-				echo $compteur;
+				$produit2 = $_POST['PROD2'];	
+				$nbechant = $_POST['COMP'];	
+				$echantillons = array("red",$_POST['PRA_ECH1']);
+				for($i=1 ; $i<$nbechant ; $i++){
+					
+				array_push($echantillons, $_POST['PRA_ECH'.$i]);
+				echo $echantillons[$i];
+				}
+				
+				echo $nbechant;
 				//$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
 			
 			}

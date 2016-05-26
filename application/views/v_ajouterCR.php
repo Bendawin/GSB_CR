@@ -89,10 +89,7 @@
 		
 			<h1> Rapport de visite </h1>
 			
-	<!-- COMPTEUR -->
 	
-			<label class="titre">COMPTEUR : </label><input type="text" value = "1" id="COMP" name="COMP" class="zone" />
-			
 	<!-- NUMERO -->
 	
 		<!-- <p> Votre numéro de compte rendu est le </p> --> 
@@ -256,6 +253,11 @@
 				<input type="reset" value="Annuler"></input>
 					
 			</div>
+		
+	<!-- COMPTEUR -->
+	
+			<input type="text" value = "1" id="COMP" name="COMP" class="zone" hidden="true"/>
+			
 			
 		</form>
 		
