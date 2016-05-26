@@ -82,15 +82,14 @@ class C_visiteur extends CI_Controller {
 				$produit1 = $_POST['PROD1'];
 				$produit2 = $_POST['PROD2'];	
 				$nbechant = $_POST['COMP'];	
-				$echantillons = array("red",$_POST['PRA_ECH1']);
+				$echantillons = array($_POST['PRA_ECH1']);
+						
+				//$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
 				for($i=1 ; $i<$nbechant ; $i++){
-					
-				array_push($echantillons, $_POST['PRA_ECH'.$i]);
-				echo $echantillons[$i];
+					array_push($echantillons, $_POST['PRA_ECH'.$i]);
+					$this->dataaccess->insertEchant($praticien,$echantillons[$i],$qte,$date);
 				}
 				
-				echo $nbechant;
-				//$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
 			
 			}
 			else								// dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
