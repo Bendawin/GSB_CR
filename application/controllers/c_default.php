@@ -7,8 +7,8 @@
  * 		+ d'orienter vers le bon contrôleur selon la situation
  * 		+ de traiter le retour du formulaire de connexion 
 */
-class C_default extends CI_Controller {
-
+class C_default extends CI_Controller
+{
 	/**
 	 * Fonctionnalité par défaut du contrôleur. 
 	 * Vérifie l'existence d'une connexion :
@@ -36,8 +36,7 @@ class C_default extends CI_Controller {
 	 * s'il est reconnu
 	*/
 	public function connecter () 
-	{	// TODO : conrôler que l'obtention des données postées ne rend pas d'erreurs 
-
+	{
 		$this->load->model('authentif');
 		
 		$login = $this->input->post('login');
@@ -55,6 +54,5 @@ class C_default extends CI_Controller {
 			$this->authentif->connecter($authUser['id'], $authUser['nom'], $authUser['prenom']);
 			$this->index();
 		}
-	}
-	
+	}	
 }

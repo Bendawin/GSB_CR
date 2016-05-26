@@ -1,4 +1,5 @@
 <div id="contenu">
+
 	<h2>Gestion des comptes-rendus</h2>
 	<h4>Bienvenue dans votre application de gestion des comptes-rendus. </h4>
 	<p>
@@ -13,4 +14,5 @@
 			<li>Se déconnecter</li>
 		</ul>
 	</p>
+	
 </div>

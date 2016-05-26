@@ -1,18 +1,31 @@
 <?php
+
 	$this->load->helper('url');
+	
 ?>
 
 <div id="contenu">
+
 	<h2>Renseigner ma fiche de frais du mois <?php echo $numMois."-".$numAnnee; ?></h2>
 					
-	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
+	<?php
+	
+		if(!empty($notify))
+		{
+			echo '<p id="notify" >'.$notify.'</p>';
+		}
+		
+	?>
+	 
 	 
 	<form method="post"  action="<?php echo base_url("c_visiteur/majForfait");?>">
-		<div class="corpsForm">
-		  
+	
+		<div class="corpsForm">		  
 			<fieldset>
 				<legend>Eléments forfaitisés</legend>
+				
 				<?php
+				
 					foreach ($lesFraisForfait as $unFrais)
 					{
 						$idFrais = $unFrais['idfrais'];
@@ -26,20 +39,25 @@
 						</p>
 						';
 					}
+					
 				?>
-			</fieldset>
+				
+			</fieldset>			
 		</div>
-		<div class="piedForm">
+		
+		<div class="piedForm">		
 			<p>
 				<input id="ok" type="submit" value="Enregistrer" size="20" />
 				<input id="annuler" type="reset" value="Effacer" size="20" />
-			</p> 
+			</p>			 
 		</div>
+		
 	</form>
 
 	
 	<table class="listeLegere">
-		<caption>Descriptif des éléments hors forfait</caption>
+			<caption>Descriptif des éléments hors forfait</caption>
+			
 		<tr>
 			<th >Date</th>
 			<th >Libellé</th>  
@@ -47,8 +65,9 @@
 			<th >&nbsp;</th>              
 		</tr>
           
-		<?php    
-			foreach( $lesFraisHorsForfait as $unFraisHorsForfait) 
+		<?php
+		    
+			foreach($lesFraisHorsForfait as $unFraisHorsForfait) 
 			{
 				$libelle = $unFraisHorsForfait['libelle'];
 				$date = $unFraisHorsForfait['date'];
@@ -67,33 +86,43 @@
 					'</td>
 				</tr>';
 			}
+			
 		?>	  
                                           
     </table>
 
 	<form method="post" action="<?php echo base_url("c_visiteur/ajouteFrais");?>">
+	
 		<div class="corpsForm">
 			<fieldset>
 				<legend>Nouvel élément hors forfait</legend>
+				
 				<p>
 					<label for="txtDateHF">Date (jj/mm/aaaa): </label>
 					<input type="text" id="txtDateHF" name="dateFrais" size="10" maxlength="10" value=""  />
 				</p>
+				
 				<p>
 					<label for="txtLibelleHF">Libellé</label>
 					<input type="text" id="txtLibelleHF" name="libelle" size="60" maxlength="256" value="" />
 				</p>
+				
 				<p>
 					<label for="txtMontantHF">Montant : </label>
 					<input type="text" id="txtMontantHF" name="montant" size="10" maxlength="10" value="" />
 				</p>
+				
 			</fieldset>
 		</div>
+		
 		<div class="piedForm">
 			<p>
 				<input id="ajouter" type="submit" value="Ajouter" size="20" />
 				<input id="effacer" type="reset" value="Effacer" size="20" />
-			</p> 
+			</p>
+			 
 		</div>
+		
 	</form>
+	
 </div>

@@ -1,6 +1,8 @@
 
 <?php
+
 	$this->load->helper('url');
+	
 ?>
 <html>
 <head>
@@ -15,12 +17,12 @@
 	
 	<script language="javascript">
 	
-		function selectionne(pValeur, pSelection,  pObjet)
+		function selectionne(pValeur, pSelection, pObjet)
 		{
 			
 			//active l'objet pObjet du formulaire si la valeur sélectionnée (pSelection) est égale à la valeur attendue (pValeur)
 			
-			if (pSelection==pValeur)
+			if (pSelection == pValeur)
 				{ 				
 					formRAPPORT_VISITE.elements[pObjet].disabled=false;				
 				}
@@ -39,7 +41,6 @@
 		
         function ajoutLigne(pNumero)
         {
-
             //ajoute une ligne de produits/qté à la div "lignes"     
 			//masque le bouton en cours		
 			document.getElementById("but"+pNumero).setAttribute("hidden","true");	
@@ -53,6 +54,7 @@
 			laDiv.appendChild(liste) ;
 			liste.setAttribute("name","PRA_ECH"+pNumero) ;
 			liste.setAttribute("class","zone");
+			
 			//remplit la liste avec les valeurs de la première liste construite en PHP à partir de la base
 			liste.innerHTML=formRAPPORT_VISITE.elements["PRA_ECH1"].innerHTML;
 			var qte = document.createElement("input");
@@ -63,14 +65,14 @@
 			qte.setAttribute("type","text");
 			var bouton = document.createElement("input");
 			laDiv.appendChild(bouton);
+			
 			//ajoute une gestion évenementielle en faisant évoluer le numéro de la ligne
 			bouton.setAttribute("onClick","ajoutLigne("+ pNumero +");");
 			bouton.setAttribute("type","button");
 			bouton.setAttribute("value","+");
 			bouton.setAttribute("class","zone");	
 			bouton.setAttribute("id","but"+ pNumero);	
-			document.getElementById('COMP').value=pNumero;
-						
+			document.getElementById('COMP').value=pNumero;						
         }
         
     </script>
@@ -105,12 +107,14 @@
 			<select  name="PRA_NUM" class="zone" >
 			
 				<?php 
+				
 					$indice = 1;
 					for ($i = 0; $i < count($lesPratic) ; $i++)
 					{
 						echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
 						$indice += 1;
 					} 
+					
 				?> 
 					
 			</select>
@@ -128,12 +132,14 @@
 			<select name="PRA_REMPLACANT" disabled="disabled" class="zone" >
 			
 				<?php 
+				
 					$indice = 1;
 					for ($i = 0; $i < count($lesPratic) ; $i++)
 					{
 						echo '<option value="'.$lesPratic[$i]['code'].'">'.$lesPratic[$i]['nom'] .' '.$lesPratic[$i]['prenom'] .'</option>';
 						$indice += 1;
 					} 
+					
 				?> 
 					
 			</select>
@@ -146,7 +152,7 @@
 	
 			<label class="titre">Motif :</label>
 			
-			<select  name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
+			<select name="RAP_MOTIF" class="zone" onClick="selectionne('AUT',this.value,'RAP_MOTIFAUTRE');">
 			
 				<option value="PRD">Périodicité</option>
 				<option value="ACT">Actualisation</option>
@@ -162,46 +168,56 @@
 										
 	<!-- BILAN -->	
 			
-			<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"></head>
+			<!DOCTYPE html><html lang="fr">
+			
+			<head>
+			
+			<meta charset="UTF-8">
 								
 			<label class="titre">Bilan : </label>	
 					
-			<textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>
+			<textarea rows="5" cols="50" name="RAP_BILAN" class="zone" ></textarea>	
+					
+			</head>
 			
 	<!-- ELEMENTS PRESENTES -->	
 		
-			<label class="titre" ><h3> Eléments présentés </h3></label>			
+			<label class="titre"><h3> Eléments présentés </h3></label>			
 			
 	<!-- PRODUIT 1 -->
 	
-			<label class="titre" >Produit 1 : </label>
+			<label class="titre">Produit 1 : </label>
 			
 			<select name="PROD1" class="zone">
 			
 				<?php
+				
 					$indice = 1;
 					for ($i = 0; $i < count($lesMedic) ; $i++)
 					{
 						echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
 						$indice += 1;
 					} 
+					
 				?> 
 				
 			</select>			
 																			
 	<!-- PRODUIT 2 -->
 										
-			<label class="titre" >Produit 2 : </label>
+			<label class="titre">Produit 2 : </label>
 			
 			<select name="PROD2" class="zone">
 			
-				<?php 
+				<?php
+				 
 					$indice = 1;
 					for ($i = 0; $i < count($lesMedic) ; $i++)
 					{
 						echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
 						$indice += 1;
 					} 
+					
 				?> 
 				
 			</select>
@@ -219,25 +235,25 @@
 			
 			<div class="titre" id="lignes">
 			
-			<label class="titre" >Produit :</label>
+			<label class="titre">Produit :</label>
 				
 			<select name="PRA_ECH1" class="zone">
 			
 					<?php 
+					
 						$indice = 1;
 						for ($i = 0; $i < count($lesMedic) ; $i++)
 						{
 							echo '<option value="'.$lesMedic[$i]['code'].'">'.$lesMedic[$i]['medicament'].'</option>';
 							$indice += 1;
 						} 
+						
 					?> 
 					
 			</select>
 			
 				<input type="text" name="PRA_QTE1" size="2" class="zone"/>
-				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />
-				<?php 
-				?>	
+				<input type="button" id="but1" value="+" onclick="ajoutLigne(1);" class="zone" />	
 						
 			</div>	
 				

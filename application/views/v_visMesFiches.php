@@ -1,32 +1,47 @@
 <?php
+
 	$this->load->helper('url');
+	
 ?>
+
 <div id="contenu">
+
 	<h2>Liste de mes fiches de frais</h2>
 	 	
-	<?php if(!empty($notify)) echo '<p id="notify" >'.$notify.'</p>';?>
+	<?php
+	
+		if(!empty($notify))
+		{
+			echo '<p id="notify" >'.$notify.'</p>';
+		}
+		
+	?>
 	 
 	<table class="listeLegere">
+	
 		<thead>
 			<tr>
-				<th >Mois</th>
-				<th >Etat</th>  
-				<th >Montant</th>  
-				<th >Date modif.</th>  
-				<th  colspan="4">Actions</th>              
+				<th>Mois</th>
+				<th>Etat</th>  
+				<th>Montant</th>  
+				<th>Date modif.</th>  
+				<th colspan="4">Actions</th>              
 			</tr>
 		</thead>
+		
 		<tbody>
           
-		<?php    
+		<?php
+		  
 			foreach( $mesFiches as $uneFiche) 
 			{
 				$modLink = '';
 				$signeLink = '';
 
-				if ($uneFiche['id'] == 'CR') {
-					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier',  'title="Modifier la fiche"');
-					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer',  'title="Signer la fiche"  onclick="return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
+				if ($uneFiche['id'] == 'CR')
+				{
+					$modLink = anchor('c_visiteur/modFiche/'.$uneFiche['mois'], 'modifier', 'title = "Modifier la fiche"');
+					$signeLink = anchor('c_visiteur/signeFiche/'.$uneFiche['mois'], 'signer', 'title = "Signer la fiche" onclick = "return confirm(\'Voulez-vous vraiment signer cette fiche ?\');"');
 				}
 				
 				echo 
@@ -39,8 +54,11 @@
 					<td class="action">'.$signeLink.'</td>
 				</tr>';
 			}
-		?>	  
+			
+		?>	
+		  
 		</tbody>
+		
     </table>
 
 </div>

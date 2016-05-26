@@ -4,7 +4,7 @@ class FunctionsLib extends CI_Model {
 
     function __construct()
     {
-        // Call the Model constructor
+        // Appelle le modèle du constructeur
         parent::__construct();
     }
 

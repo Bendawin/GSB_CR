@@ -4,7 +4,7 @@ class Authentif extends CI_Model {
 
     function __construct()
     {
-        // Call the Model constructor
+        // Appelle le constructeur du modèle
         parent::__construct();
     }
 
@@ -26,8 +26,7 @@ class Authentif extends CI_Model {
 	 * @param $prenom
 	 */
 	public function connecter($idUser,$nom,$prenom)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-
+	{
 		$authUser = array(
                    'idUser'  => $idUser,
                    'nom' => $nom,
@@ -56,13 +55,12 @@ class Authentif extends CI_Model {
 	}
 
 	/**
-	 * Vérifie en base de données si les informations de connexions sont correctes
+	 * Vérifie en base de données si les informations de connexion sont correctes
 	 * 
-	 * @return : renvoie l'id, le nom et le prenom de l'utilisateur dans un tableau s'il est reconnu, sinon un tableau vide.
+	 * @return : renvoie l'id, le nom et le prénom de l'utilisateur dans un tableau s'il est reconnu, sinon un tableau vide.
 	 */
 	public function authentifier ($login, $mdp) 
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-	
+	{	
 		$this->load->model('dataaccess');
 
 		$authUser = $this->dataaccess->getInfosVisiteur($login, $mdp);
