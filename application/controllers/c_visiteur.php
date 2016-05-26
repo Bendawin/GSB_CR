@@ -83,11 +83,13 @@ class C_visiteur extends CI_Controller {
 				$produit2 = $_POST['PROD2'];	
 				$nbechant = $_POST['COMP'];	
 				$echantillons = array($_POST['PRA_ECH1']);
-						
-				//$this->dataaccess->insertData($date, $praticien, $remplacant, $motif, $bilan, $produit1, $produit2, $echantillon);
+				$qte = array($_POST['PRA_QTE1']);
+				$this->load->model('dataaccess');	
+				$this->dataaccess->insertData($date, $praticien, $motif, $bilan, $produit1, $produit2);
 				for($i=1 ; $i<$nbechant ; $i++){
 					array_push($echantillons, $_POST['PRA_ECH'.$i]);
-					$this->dataaccess->insertEchant($praticien,$echantillons[$i],$qte,$date);
+					array_push($qte, $_POST['PRA_QTE'.$i]);					
+					$this->dataaccess->insertEchant($praticien,(string)$echantillons[$i],(string)$qte[$i],$date);
 				}
 				
 			

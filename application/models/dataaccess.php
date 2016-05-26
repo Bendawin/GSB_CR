@@ -60,7 +60,7 @@ class DataAccess extends CI_Model {
 	 public function insertData($date, $praticien, $motif, $bilan, $produit1, $produit2){
 	 $matricule = $this->session->userdata('idUser');
 	 $req = "INSERT INTO rapport_visite(vis_matricule, pra_num, rap_date, rap_bilan, rap_motif)
-	 		VALUES ($matricule, $praticien, $date, $bilan, $motif)";
+	 		VALUES ('$matricule', '$praticien', '$date', '$bilan', '$motif')";
 	 $rs = $this->db->query($req);
 	 }
 	 
@@ -68,12 +68,15 @@ class DataAccess extends CI_Model {
 	 $matricule = $this->session->userdata('idUser');
 	 $requ = "SELECT RAP_NUM 
 	 		  FROM rapport_visite
-	 		  WHERE VIS_MATRICULE = $matricule AND PRA_NUM = $praticien AND RAP_DATE = $date; ";
+	 		  WHERE VIS_MATRICULE = '$matricule' AND PRA_NUM = '$praticien' AND RAP_DATE = '$date'; ";
 	 $rs = $this->db->query($requ);
-	 $rapport = $rs->result();
+	 $rapport = $rs->result_array();	 
 	 
+	 (string)$rapnum = (string)$rapport[1];
+	 (string)$medic = (string)$medic;
+	 (string)$qte = (string)$qte;
 	 $req = "INSERT INTO offrir(VIS_MATRICULE , RAP_NUM , MED_DEPOTLEGAL , OFF_QTE) 
-	 VALUES ($praticien,$rapport,$medic,$qte);";
+	 		 VALUES ('$matricule','$rapnum','$medic','$qte');";
 	 $rs2 = $this->db->query($req);
 	 
 	 	
