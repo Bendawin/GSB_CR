@@ -73,10 +73,26 @@ class C_visiteur extends CI_Controller
 				{
 					$praticien = $_POST['PRA_REMPLACANT'];
 				}
-			
-				if ($motif = $_POST['RAP_MOTIF'] == 'AUT')
+				$motif = $_POST['RAP_MOTIF'];
+				if ($motif == 'AUT')
 				{
 					$motif = $_POST['RAP_MOTIFAUTRE'];
+				}
+				elseif($motif == 'ACT')
+				{
+					$motif= "Actualisation";
+				}
+				elseif($motif == 'PRD')
+				{
+					$motif= "Périodicité";
+				}
+				elseif($motif == 'REL')
+				{
+					$motif= "Relance";
+				}
+				elseif($motif == 'SOL')
+				{
+					$motif= "Sollicitation praticien";
 				}
 				
 				$bilan = $_POST['RAP_BILAN'];
