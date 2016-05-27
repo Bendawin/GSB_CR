@@ -92,8 +92,6 @@ class DataAccess extends CI_Model
 	 	foreach($rapport as $rap){
 	 	$rapnum=$rap;
 	 	}	 	
-	 	$medic = $medic;
-	 	$qte = $qte;
 	 	
 	 	$req = "INSERT INTO offrir(VIS_MATRICULE, RAP_NUM, MED_DEPOTLEGAL, OFF_QTE) 
 	 			VALUES ('$matricule','$rapnum','$medic','$qte')";
