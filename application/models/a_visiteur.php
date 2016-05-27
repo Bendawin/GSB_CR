@@ -20,7 +20,12 @@ class A_visiteur extends CI_Model {
     
 	public function accueil($message=null)	// Charge la page d'accueil
 	{	
-		$data['notify'] = $message;
+		if($message != null){
+			echo $message;
+			sleep(5);
+			$message = null;
+			
+		}
 		$this->templates->load('t_visiteur', 'v_visAccueil');
 	}
 	
@@ -52,7 +57,6 @@ class A_visiteur extends CI_Model {
 	{			
 		$data['lesMedic']= $this->dataaccess->getLesMedic();
 		$data['lesPratic']= $this->dataaccess->getLesPratic();
-		/* $data['numauto']= $this->dataaccess->getNumAuto(); */
 		$this->templates->load('t_visiteur', 'v_ajouterCR', $data);
 	}
 }

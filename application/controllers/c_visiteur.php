@@ -47,8 +47,7 @@ class C_visiteur extends CI_Controller
 	
 			elseif ($action == 'ajouterCR')
 			{
-				$this->load->model('a_visiteur');
-				// $data['lesMedic'] = $this->dataaccess->getLesMedic();
+				$this->load->model('a_visiteur');				
 				$this->a_visiteur->ajouterCR();				
 			}			
 			
@@ -62,6 +61,11 @@ class C_visiteur extends CI_Controller
 			{
 				$this->load->model('authentif');
 				$this->authentif->deconnecter();
+			}
+			elseif ($action == 'retourAcc')
+			{
+				$this->load->model('a_visiteur');
+				$this->a_visiteur->accueil();
 			}
 			
 			elseif ($action == 'recupRAPPORT_VISITE')
@@ -110,8 +114,11 @@ class C_visiteur extends CI_Controller
 					array_push($qte, $_POST['PRA_QTE'.$i]);					
 					$this->dataaccess->insertEchant($praticien,(string)$echantillons[$i],(string)$qte[$i],$date);
 				}
+				
 				$this->load->model('a_visiteur');
 				$this->a_visiteur->accueil("Votre compte rendu a bien été enregistré");
+				
+				
 				
 				
 			}

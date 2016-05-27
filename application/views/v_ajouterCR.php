@@ -275,6 +275,7 @@
 			<input type="text" value = "1" id="COMP" name="COMP" class="zone" hidden="true"/>
 			
 			
+			
 		</form>
 		
 	</div>
