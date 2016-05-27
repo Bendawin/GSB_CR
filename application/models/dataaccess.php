@@ -88,11 +88,12 @@ class DataAccess extends CI_Model
 	 		  	 FROM rapport_visite
 	 		  	 WHERE VIS_MATRICULE = '$matricule' AND PRA_NUM = '$praticien' AND RAP_DATE = '$date'";
 	 	$rs = $this->db->query($requ);
-	 	$rapport = $rs->result_array();	 
-	 
-	 	(string)$rapnum = (string)$rapport[1];
-	 	(string)$medic = (string)$medic;
-	 	(string)$qte = (string)$qte;
+	 	$rapport = $rs->first_row('array'); 
+	 	foreach($rapport as $rap){
+	 	$rapnum=$rap;
+	 	}	 	
+	 	$medic = $medic;
+	 	$qte = $qte;
 	 	
 	 	$req = "INSERT INTO offrir(VIS_MATRICULE, RAP_NUM, MED_DEPOTLEGAL, OFF_QTE) 
 	 			VALUES ('$matricule','$rapnum','$medic','$qte')";
