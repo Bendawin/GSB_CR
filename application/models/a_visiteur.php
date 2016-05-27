@@ -18,8 +18,9 @@ class A_visiteur extends CI_Model {
 	 * Si l'une d'elles est absente, elle est créée.
 	*/
     
-	public function accueil()	// Charge la page d'accueil
+	public function accueil($message=null)	// Charge la page d'accueil
 	{	
+		$data['notify'] = $message;
 		$this->templates->load('t_visiteur', 'v_visAccueil');
 	}
 	

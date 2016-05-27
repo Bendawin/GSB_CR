@@ -93,10 +93,10 @@ class C_visiteur extends CI_Controller
 					array_push($echantillons, $_POST['PRA_ECH'.$i]);
 					array_push($qte, $_POST['PRA_QTE'.$i]);					
 					$this->dataaccess->insertEchant($praticien,(string)$echantillons[$i],(string)$qte[$i],$date);
-				}	
-				echo "Votre rapport a bien été pris en compte.";
-				echo "redirection ...";
-				sleep(5);
+				}
+				$this->load->model('a_visiteur');
+				$this->a_visiteur->accueil("Votre compte rendu a bien été enregistré");
+				
 				
 			}
 			
