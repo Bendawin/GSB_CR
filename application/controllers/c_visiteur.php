@@ -93,7 +93,11 @@ class C_visiteur extends CI_Controller
 					array_push($echantillons, $_POST['PRA_ECH'.$i]);
 					array_push($qte, $_POST['PRA_QTE'.$i]);					
 					$this->dataaccess->insertEchant($praticien,(string)$echantillons[$i],(string)$qte[$i],$date);
-				}			
+				}	
+				echo "Votre rapport a bien été pris en compte.";
+				echo "redirection ...";
+				sleep(5);
+				
 			}
 			
 			else	// Dans tous les autres cas, on envoie la vue par défaut pour l'erreur 404
