@@ -180,11 +180,11 @@
 					
 			</head>
 			
-	<!-- ELEMENTS PRESENTES -->	
+<!-- 	
 		
 			<label class="titre"><h3> Eléments présentés </h3></label>			
 			
-	<!-- PRODUIT 1 -->
+	
 	
 			<label class="titre">Produit 1 : </label>
 			
@@ -203,7 +203,7 @@
 				
 			</select>			
 																			
-	<!-- PRODUIT 2 -->
+	
 										
 			<label class="titre">Produit 2 : </label>
 			
@@ -223,15 +223,15 @@
 			</select>
 			
 			
-	<!-- DOCUMENT OFFERT -->
+
 		
 			<label class="titre">Documentation Offerte : </label>
 			
-			<input name="RAP_DOC" type="checkbox" class="zone" />
+			<input name="RAP_DOC" type="checkbox" class="zone" /> -->
 		
 	<!-- ECHANTILLONS -->
 	
-			<label class="titre"><h3>Echantillons </h3></label>
+			<label class="titre"><h3>Echantillons offerts</h3></label>
 			
 			<div class="titre" id="lignes">
 			
@@ -257,7 +257,7 @@
 						
 			</div>	
 				
-			<label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" />
+			<!-- <label class="titre">Saisie Définitive : </label><input name="RAP_LOCK" type="checkbox" class="zone" /> -->
 			
 	<!-- BTN VALIDER ANNULER -->
 	

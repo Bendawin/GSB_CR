@@ -100,13 +100,13 @@ class C_visiteur extends CI_Controller
 				}
 				
 				$bilan = $_POST['RAP_BILAN'];
-				$produit1 = $_POST['PROD1'];
-				$produit2 = $_POST['PROD2'];	
+				//$produit1 = $_POST['PROD1'];
+				//$produit2 = $_POST['PROD2'];	
 				$nbechant = $_POST['COMP'];	
 				$echantillons = array($_POST['PRA_ECH1']);
 				$qte = array($_POST['PRA_QTE1']);
 				$this->load->model('dataaccess');	
-				$this->dataaccess->insertData($date, $praticien, $motif, $bilan, $produit1, $produit2);
+				$this->dataaccess->insertData($date, $praticien, $motif, $bilan);
 				
 				for($i=1 ; $i<$nbechant ; $i++)
 				{
@@ -116,10 +116,10 @@ class C_visiteur extends CI_Controller
 				}
 				
 				$this->load->model('a_visiteur');
-				$this->a_visiteur->accueil("Votre compte rendu a bien été enregistré");
-				
-				
-				
+				$this->a_visiteur->accueil();
+				echo"<script type=\"text/javascript\">
+				alert('Le compte rendu a bien été enregistré');
+				</script>";
 				
 			}
 			

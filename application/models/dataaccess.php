@@ -72,7 +72,7 @@ class DataAccess extends CI_Model
 	 }
 	 
 	 // Insère dans la base de données les informations saisies dans le formulaire (sauf échantillons) par le visiteur.
-	 public function insertData($date, $praticien, $motif, $bilan, $produit1, $produit2)
+	 public function insertData($date, $praticien, $motif, $bilan)
 	 {
 	 	$matricule = $this->session->userdata('idUser');
 	 	$req = "INSERT INTO rapport_visite(vis_matricule, pra_num, rap_date, rap_bilan, rap_motif)
